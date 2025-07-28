@@ -29,18 +29,20 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import numpy as np
 import skvideo
-skvideo.setFFmpegPath('C:/Anaconda3/Lib/site-packages/ffmpeg') #set path to ffmpeg installation before importing io
+skvideo.setFFmpegPath(r'C:\Users\buschmanlab\.conda\envs\behvid\Lib\site-packages\ffmpeg\bin') 
+#skvideo.setFFmpegPath(r'C:\Users\mouse1\anaconda3\envs\behvid\Lib\site-packages\ffmpeg\6.0\bin') #set path to ffmpeg installation before importing io
 import skvideo.io
+#TO RUN: (env)python C:\Users\mouse1\Documents\GitHub\pySpinCapture\cameraCapture.py
 
 #constants
 SAVE_FOLDER_ROOT = 'C:/video'
-FILENAME_ROOT = 'mj_' # optional identifier
+FILENAME_ROOT = 'behvid_' # optional identifier
 EXPOSURE_TIME = 500 # in microseconds
 GAIN_VALUE = 0 #in dB, 0-40;
 GAMMA_VALUE = 0.5 #0.25-1
-SEC_TO_RECORD = 10 #approximate # seconds to record for; can also use Ctrl-C to interupt in middle of capture
-IMAGE_HEIGHT = 240  #540 pixels default
-IMAGE_WIDTH = 320 #720 pixels default
+SEC_TO_RECORD = 20 #approximate # seconds to record for; can also use Ctrl-C to interupt in middle of capture
+IMAGE_HEIGHT = 360  #540 pixels default 
+IMAGE_WIDTH = 480 #720 pixels default WIDTH:HEIGHT ratio = 4:3
 HEIGHT_OFFSET = round((540-IMAGE_HEIGHT)/2) # Y, to keep in middle of sensor
 WIDTH_OFFSET = round((720-IMAGE_WIDTH)/2) # X, to keep in middle of sensor
 
